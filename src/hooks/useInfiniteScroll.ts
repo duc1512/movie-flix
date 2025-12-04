@@ -14,8 +14,8 @@ export const useInfiniteScroll = ({
   threshold = 100,
 }: UseInfiniteScrollProps) => {
   const [isFetching, setIsFetching] = useState(false);
-  const observer = useRef<IntersectionObserver>();
-  const loadMoreRef = useRef<HTMLDivElement>(null);
+const observer = useRef<IntersectionObserver | null>(null);
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
   const handleObserver = useCallback(
     (entries: IntersectionObserverEntry[]) => {
